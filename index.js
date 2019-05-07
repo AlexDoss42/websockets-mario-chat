@@ -1,3 +1,7 @@
+// This goes in the server
+
+
+
 const express = require('express');
 const socket = require('socket.io');
 
@@ -23,6 +27,7 @@ io.on('connection', function(socket){
 
   //Handle Chat Event
   socket.on('chat', function(data){
+    //Should add the db.something right here for full stack chat and enable persistence 
     io.sockets.emit('chat', data);
   });
 
